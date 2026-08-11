@@ -7,12 +7,15 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from "react-native";
+
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+
 import Header from "./components/Header";
 import SubHeader from "./components/SubHeader";
 import Button from "./components/Button";
+import Card from "./components/Card";
 
 export default function App() {
   const [name, setName] = useState("");
@@ -41,12 +44,11 @@ export default function App() {
               style={styles.bannerImg}
             />
 
-            <Header title="AI Engineering Course" color="darkblue" />
-            <Image
-              source={{ uri: "https://i.imgur.com/9wvRTDo.png" }}
-              style={styles.image}
+            <Card
+              imageSource={{ uri: "https://i.imgur.com/9wvRTDo.png" }}
+              title="AI Engineering Course"
+              subtitle="Sign Up Form"
             />
-            <SubHeader title="Sign Up Form" />
 
             <Text style={styles.mainText}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
