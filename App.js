@@ -144,6 +144,6 @@ const styles = StyleSheet.create({
   },
   focusedInput: {
     borderColor: "darkblue", // Changes border color when focused
-    borderWidth: 2, // Optional: makes the border slightly thicker on focus
+    borderWidth: 2, // Makes the border slightly thicker on focus
   },
 });
