@@ -6,6 +6,7 @@ import {
   TextInput,
   KeyboardAvoidingView,
   Platform,
+  Dimensions,
 } from "react-native";
 
 import { StatusBar } from "expo-status-bar";
@@ -16,6 +17,9 @@ import Header from "./components/Header";
 import SubHeader from "./components/SubHeader";
 import Button from "./components/Button";
 import Card from "./components/Card";
+
+// Get the width of the device's window for responsive design
+const { width } = Dimensions.get("window");
 
 export default function App() {
   const [name, setName] = useState("");
@@ -41,7 +45,12 @@ export default function App() {
           >
             <Image
               source={require("./assets/images/ntu-building.webp")}
-              style={styles.bannerImg}
+              style={[
+                styles.bannerImg,
+                // Adjust the image size based on the device's width
+                { width: width - 32, height: width - 32 },
+              ]}
+              resizeMode="cover"
             />
 
             <Card
